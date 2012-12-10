@@ -47,7 +47,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="vWa-7w-pSF" userLabel="Product Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="vWa-7w-pSF" userLabel="Product Image">
                                                     <rect key="frame" x="20" y="20" width="280" height="170"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -145,6 +145,7 @@
         <class className="ProductTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTableViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="productTitleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
