@@ -54,6 +54,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="productImageView" destination="vWa-7w-pSF" id="wQq-0g-aw3"/>
+                                            <outlet property="productTitleLabel" destination="AIt-pf-6wG" id="JOJ-wY-lBe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -77,7 +81,7 @@
         <scene sceneID="xWI-My-Hmm">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="bj3-YI-6x1" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pXF-UF-EOV">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -140,6 +144,9 @@
         </class>
         <class className="ProductTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productTitleLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
