@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString *categoryId;
 @property (nonatomic, strong) NSString *collectionId;
 @property (nonatomic, strong) NSString *genderId;
+
+//Array of NSString product ids
 @property (nonatomic, strong) NSArray *productIds;
 
 

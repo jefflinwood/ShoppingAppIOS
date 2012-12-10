@@ -62,6 +62,15 @@ static AppData *sharedData = nil;
             ProductDisplay *display = [[ProductDisplay alloc] init];
             display.title = result[@"title"];
             display.nid = result[@"nid"];
+            
+            NSMutableArray *productIds = [[NSMutableArray alloc] init];
+            NSArray *productsJSON = [AppHelper extractDrupalFieldArray:result fieldName:@"field_product"];
+            for (NSDictionary *item in productsJSON) {
+                NSString *productId = item[@"product_id"];
+                [productIds addObject:productId];
+            }
+            display.productIds = productIds;
+            
             [displays addObject:display];
         }
         self.productDisplays = displays;
