@@ -9,9 +9,12 @@
 #import "AppData.h"
 
 #import "AFNetworking.h"
-
+#import "AppHelper.h"
+#import "Image.h"
+#import "Price.h"
 #import "ProductDisplay.h"
 #import "Product.h"
+
 
 @interface AppData ()
 //array of ProductDisplay objects
@@ -70,6 +73,16 @@ static AppData *sharedData = nil;
             product.title = result[@"title"];
             product.sku = result[@"sku"];
             product.productId = result[@"product_id"];
+            
+            NSMutableArray *productImages = [[NSMutableArray alloc] init];
+            NSArray *imageJSON = [AppHelper extractDrupalFieldArray:result fieldName:@"field_images"];
+            for (NSDictionary *item in imageJSON) {
+                Image *image = [[Image alloc] init];
+                image.drupalUri = item[@"uri"];
+                [productImages addObject:image];
+            }
+            product.images = productImages;
+            
             [products setObject:product forKey:product.productId];
         }
         self.products = products;

@@ -28,19 +28,14 @@
 
 }
 
-+ (NSArray*) extractDrupalFieldArray:(NSDictionary*) node fieldName:(NSString*)fieldName fieldAttr:(NSString*)fieldAttr {
++ (NSArray*) extractDrupalFieldArray:(NSDictionary*) node fieldName:(NSString*)fieldName  {
     
     NSDictionary *field = node[fieldName];
     if (field == nil) {
         return nil;
     }
     
-    NSDictionary *und = field[@"und"];
-    if (und == nil) {
-        return nil;
-    }
-    
-    return und[fieldAttr];
+    return field[@"und"];
 }
 
 
