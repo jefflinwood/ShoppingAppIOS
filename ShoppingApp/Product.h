@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *sku;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *productId;
 
 // Array of Price objects
 @property (nonatomic, strong) NSArray *prices;

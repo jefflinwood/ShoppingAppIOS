@@ -10,6 +10,9 @@
 
 #import "AFNetworking.h"
 
+#import "ProductDisplay.h"
+#import "Product.h"
+
 @interface AppData ()
 //array of ProductDisplay objects
 @property (nonatomic, strong) NSArray *productDisplays;
@@ -17,7 +20,8 @@
 //key is nid (as NSString), value is Product object
 @property (nonatomic, strong) NSDictionary *products;
 
-- (void) loadDisplayProducts;
+- (NSString*) baseURI;
+- (void) loadProductDisplays;
 - (void) loadProducts;
 
 @end
@@ -29,16 +33,52 @@ static AppData *sharedData = nil;
 
 #pragma mark Drupal Commerce Networking methods
 
-- (NSString*) baseURL {
+- (NSString*) baseURI {
     return  @"http://commerce.localhost:8082/rest";
 }
 
-- (void) loadDisplayProducts {
-    
+- (void) loadProductDisplays {
+    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product-display.json"];
+    NSURL *url = [NSURL URLWithString:uri];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSArray *results = JSON;
+        NSMutableArray *displays = [[NSMutableArray alloc] init];
+        for (NSDictionary *result in results) {
+            ProductDisplay *display = [[ProductDisplay alloc] init];
+            display.title = result[@"title"];
+            display.nid = result[@"nid"];
+            [displays addObject:display];
+        }
+        self.productDisplays = displays;
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        self.productDisplays = nil;
+    }];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
 }
 
 - (void) loadProducts {
-    
+    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product.json"];
+    NSURL *url = [NSURL URLWithString:uri];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSArray *results = JSON;
+        NSMutableDictionary *products = [[NSMutableDictionary alloc] init];
+        for (NSDictionary *result in results) {
+            Product *product = [[Product alloc] init];
+            product.title = result[@"title"];
+            product.sku = result[@"sku"];
+            product.productId = result[@"product_id"];
+            [products setObject:product forKey:product.productId];
+        }
+        self.products = products;
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        self.products = nil;
+    }];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
+
 }
 
 #pragma mark Singleton method
@@ -49,7 +89,7 @@ static AppData *sharedData = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         sharedData = [[AppData alloc] init];
-        [sharedData loadDisplayProducts];
+        [sharedData loadProductDisplays];
         [sharedData loadProducts];
     });
     return sharedData;
