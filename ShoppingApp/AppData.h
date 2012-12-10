@@ -10,6 +10,8 @@
 
 @interface AppData : NSObject
 
+- (NSArray*) exploreProductDisplays;
+
 //data singleton
 + (AppData*) sharedInstance;
 @end

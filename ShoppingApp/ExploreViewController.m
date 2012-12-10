@@ -8,13 +8,20 @@
 
 #import "ExploreViewController.h"
 
+
+#import "AppData.h"
+#import "AppNotifications.h"
 #import "ProductTableViewCell.h"
 
 @interface ExploreViewController ()
-
+- (void) refreshProducts:(NSNotification*)notification;
 @end
 
 @implementation ExploreViewController
+
+- (void) refreshProducts:(NSNotification*)notification {
+    [self.tableView reloadData];
+}
 
 #pragma mark UITableViewDataSource methods
 
@@ -26,7 +33,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [[[AppData sharedInstance] exploreProductDisplays] count];
+    ;
 }
 
 
@@ -36,6 +44,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProducts:) name:PRODUCT_DISPLAYS_RELOADED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProducts:) name:PRODUCTS_RELOADED object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +56,7 @@
 
 - (void)viewDidUnload {
     [self setTableView:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewDidUnload];
 }
 @end

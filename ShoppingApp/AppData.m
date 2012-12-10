@@ -34,6 +34,10 @@
 
 static AppData *sharedData = nil;
 
+- (NSArray*) exploreProductDisplays {
+    return self.productDisplays;
+}
+
 #pragma mark Drupal Commerce Networking methods
 
 - (NSString*) baseURI {
@@ -45,9 +49,9 @@ static AppData *sharedData = nil;
     NSURL *url = [NSURL URLWithString:uri];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSArray *results = JSON;
+        NSDictionary *results = JSON;
         NSMutableArray *displays = [[NSMutableArray alloc] init];
-        for (NSDictionary *result in results) {
+        for (NSDictionary *result in [results allValues]) {
             ProductDisplay *display = [[ProductDisplay alloc] init];
             display.title = result[@"title"];
             display.nid = result[@"nid"];
@@ -66,9 +70,9 @@ static AppData *sharedData = nil;
     NSURL *url = [NSURL URLWithString:uri];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSArray *results = JSON;
+        NSDictionary *results = JSON;
         NSMutableDictionary *products = [[NSMutableDictionary alloc] init];
-        for (NSDictionary *result in results) {
+        for (NSDictionary *result in [results allValues]) {
             Product *product = [[Product alloc] init];
             product.title = result[@"title"];
             product.sku = result[@"sku"];
