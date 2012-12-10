@@ -36,6 +36,7 @@
 		284EE64016762FCA002E11B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		284EE6481676302B002E11B8 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		284EE64A1676303D002E11B8 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		284EE64C167630AA002E11B8 /* ShoppingApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ShoppingApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 		284EE63016762FCA002E11B8 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				284EE64C167630AA002E11B8 /* ShoppingApp.entitlements */,
 				284EE6471676300F002E11B8 /* Storyboards */,
 				284EE63916762FCA002E11B8 /* AppDelegate.h */,
 				284EE63A16762FCA002E11B8 /* AppDelegate.m */,
@@ -256,6 +258,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShoppingApp/ShoppingApp-Prefix.pch";
 				INFOPLIST_FILE = "ShoppingApp/ShoppingApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -267,6 +270,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShoppingApp/ShoppingApp-Prefix.pch";
 				INFOPLIST_FILE = "ShoppingApp/ShoppingApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
