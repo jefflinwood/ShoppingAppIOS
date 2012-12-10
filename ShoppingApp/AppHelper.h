@@ -11,4 +11,6 @@
 @interface AppHelper : NSObject
 + (NSString*) extractDrupalFieldValue:(NSDictionary*) node fieldName:(NSString*)fieldName fieldAttr:(NSString*)fieldAttr;
 + (NSArray*) extractDrupalFieldArray:(NSDictionary*) node fieldName:(NSString*)fieldName;
+
++ (NSString*) uriForDrupalUri:(NSString*)drupalUri;
 @end
