@@ -38,7 +38,8 @@ static AppData *sharedData = nil;
 - (Product*) firstProduct:(ProductDisplay*)productDisplay {
     //get the first product for a product display
     NSString *productId = productDisplay.productIds[0];
-    return [self products][productId];
+    Product *firstProduct = self.products[productId];
+    return firstProduct;
 }
 
 - (NSArray*) exploreProductDisplays {
@@ -52,7 +53,7 @@ static AppData *sharedData = nil;
 }
 
 - (void) loadProductDisplays {
-    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product-display.json"];
+    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product-display.json?limit=100"];
     NSURL *url = [NSURL URLWithString:uri];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -84,7 +85,7 @@ static AppData *sharedData = nil;
 }
 
 - (void) loadProducts {
-    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product.json"];
+    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product.json?limit=100"];
     NSURL *url = [NSURL URLWithString:uri];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
