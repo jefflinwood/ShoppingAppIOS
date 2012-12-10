@@ -8,12 +8,14 @@
 
 #import "ExploreViewController.h"
 
-
+#import "AppHelper.h"
 #import "AppData.h"
 #import "AppNotifications.h"
+#import "Image.h"
 #import "Product.h"
 #import "ProductDisplay.h"
 #import "ProductTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 
 @interface ExploreViewController ()
@@ -41,6 +43,14 @@
                                       
     //fill in data on cell
     cell.productTitleLabel.text = productDisplay.title;
+    
+    //get the first product for a product display
+    Product *product = [[AppData sharedInstance] firstProduct:productDisplay];
+    if (product.images != nil && [product.images count] > 0) {
+        Image *image = product.images[0];
+        NSString *imageUri = [AppHelper uriForDrupalUri:image.drupalUri];
+        [cell.productImageView setImageWithURL:[NSURL URLWithString:imageUri]];
+    }
     
     
     return cell;

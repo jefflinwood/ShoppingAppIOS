@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class Product;
+@class ProductDisplay;
+
 @interface AppData : NSObject
 
 - (NSArray*) exploreProductDisplays;
+- (Product*) firstProduct:(ProductDisplay*)productDisplay;
 
 //data singleton
 + (AppData*) sharedInstance;

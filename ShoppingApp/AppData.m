@@ -35,6 +35,12 @@
 
 static AppData *sharedData = nil;
 
+- (Product*) firstProduct:(ProductDisplay*)productDisplay {
+    //get the first product for a product display
+    NSString *productId = productDisplay.productIds[0];
+    return [self products][productId];
+}
+
 - (NSArray*) exploreProductDisplays {
     return self.productDisplays;
 }
