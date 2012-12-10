@@ -11,7 +11,10 @@
 
 #import "AppData.h"
 #import "AppNotifications.h"
+#import "Product.h"
+#import "ProductDisplay.h"
 #import "ProductTableViewCell.h"
+
 
 @interface ExploreViewController ()
 - (void) refreshProducts:(NSNotification*)notification;
@@ -28,6 +31,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  
     ProductTableViewCell *cell = (ProductTableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
+    
+    //set up for reuse
+    cell.productTitleLabel.text = nil;
+    cell.productImageView.image = nil;
+    
+    //get data
+    ProductDisplay *productDisplay = [[AppData sharedInstance] exploreProductDisplays][indexPath.row];
+                                      
+    //fill in data on cell
+    cell.productTitleLabel.text = productDisplay.title;
+    
     
     return cell;
 }

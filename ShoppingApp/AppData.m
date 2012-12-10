@@ -10,6 +10,7 @@
 
 #import "AFNetworking.h"
 #import "AppHelper.h"
+#import "AppNotifications.h"
 #import "Image.h"
 #import "Price.h"
 #import "ProductDisplay.h"
@@ -58,6 +59,8 @@ static AppData *sharedData = nil;
             [displays addObject:display];
         }
         self.productDisplays = displays;
+        [[NSNotificationCenter defaultCenter] postNotificationName:PRODUCT_DISPLAYS_RELOADED object:nil];
+
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         self.productDisplays = nil;
     }];
@@ -90,6 +93,7 @@ static AppData *sharedData = nil;
             [products setObject:product forKey:product.productId];
         }
         self.products = products;
+        [[NSNotificationCenter defaultCenter] postNotificationName:PRODUCTS_RELOADED object:nil];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         self.products = nil;
     }];
