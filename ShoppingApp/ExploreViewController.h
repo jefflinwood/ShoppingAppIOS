@@ -10,7 +10,5 @@
 
 @interface ExploreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UILabel *productTitleLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 
 @end

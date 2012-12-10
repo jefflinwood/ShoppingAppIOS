@@ -57,8 +57,6 @@
 - (void)viewDidUnload {
     [self setTableView:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self setProductTitleLabel:nil];
-    [self setProductImageView:nil];
     [super viewDidUnload];
 }
 @end
