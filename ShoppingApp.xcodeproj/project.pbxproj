@@ -24,6 +24,8 @@
 		284EE65D167659CA002E11B8 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE65C167659CA002E11B8 /* Product.m */; };
 		284EE66016765B05002E11B8 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE65F16765B05002E11B8 /* Price.m */; };
 		284EE66316765B7D002E11B8 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE66216765B7D002E11B8 /* Image.m */; };
+		284EE667167662AF002E11B8 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE666167662AF002E11B8 /* ProductTableViewCell.m */; };
+		284EE66B167662DA002E11B8 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE66A167662DA002E11B8 /* ExploreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		284EE65F16765B05002E11B8 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		284EE66116765B7D002E11B8 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		284EE66216765B7D002E11B8 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		284EE665167662AF002E11B8 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
+		284EE666167662AF002E11B8 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
+		284EE669167662DA002E11B8 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
+		284EE66A167662DA002E11B8 /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,8 @@
 		284EE64E1676567A002E11B8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				284EE668167662B9002E11B8 /* Explore View Controller */,
+				284EE6641676628C002E11B8 /* Product Table Cell */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -169,6 +177,24 @@
 				284EE65716765859002E11B8 /* AppNotifications.h */,
 			);
 			name = "Global Classes";
+			sourceTree = "<group>";
+		};
+		284EE6641676628C002E11B8 /* Product Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				284EE665167662AF002E11B8 /* ProductTableViewCell.h */,
+				284EE666167662AF002E11B8 /* ProductTableViewCell.m */,
+			);
+			name = "Product Table Cell";
+			sourceTree = "<group>";
+		};
+		284EE668167662B9002E11B8 /* Explore View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				284EE669167662DA002E11B8 /* ExploreViewController.h */,
+				284EE66A167662DA002E11B8 /* ExploreViewController.m */,
+			);
+			name = "Explore View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +272,8 @@
 				284EE65D167659CA002E11B8 /* Product.m in Sources */,
 				284EE66016765B05002E11B8 /* Price.m in Sources */,
 				284EE66316765B7D002E11B8 /* Image.m in Sources */,
+				284EE667167662AF002E11B8 /* ProductTableViewCell.m in Sources */,
+				284EE66B167662DA002E11B8 /* ExploreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
