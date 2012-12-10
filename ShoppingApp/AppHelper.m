@@ -10,4 +10,23 @@
 
 @implementation AppHelper
 
+
+// helper method to get field values from Drupal 7 JSON nodes
++ (NSString*) extractDrupalFieldValue:(NSDictionary*) node fieldName:(NSString*)fieldName fieldAttr:(NSString*)fieldAttr {
+    
+    NSDictionary *field = node[fieldName];
+    if (field == nil) {
+        return nil;
+    }
+    
+    NSDictionary *und = field[@"und"];
+    if (und == nil) {
+        return nil;
+    }
+    
+    return und[fieldAttr];
+
+}
+
+
 @end
