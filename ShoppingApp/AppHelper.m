@@ -39,7 +39,7 @@
 }
 
 + (NSString*) uriForDrupalUri:(NSString*)drupalUri {
-    return [drupalUri stringByReplacingOccurrencesOfString:@"public://" withString:@"http://commerce.localhost:8082/sites/commerce.localhost/files/styles/product_thumbnail/public"];
+    return [drupalUri stringByReplacingOccurrencesOfString:@"public://" withString:@"http://commerce.localhost:8082/sites/commerce.localhost/files/styles/product_thumbnail/public/"];
 }
 
 @end
