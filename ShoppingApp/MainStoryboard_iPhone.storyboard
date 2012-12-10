@@ -66,6 +66,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="iwY-cO-Cy6"/>
                     <connections>
+                        <outlet property="productImageView" destination="vWa-7w-pSF" id="2a7-ny-9wO"/>
+                        <outlet property="productTitleLabel" destination="AIt-pf-6wG" id="04b-Eq-bWY"/>
                         <outlet property="tableView" destination="iBt-vX-jlN" id="nPR-J1-KHp"/>
                     </connections>
                 </viewController>
@@ -135,6 +137,8 @@
         <class className="ExploreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExploreViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
