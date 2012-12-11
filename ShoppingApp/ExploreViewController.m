@@ -13,6 +13,7 @@
 #import "AppNotifications.h"
 #import "Image.h"
 #import "Product.h"
+#import "ProductDetailsViewController.h"
 #import "ProductDisplay.h"
 #import "ProductTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
@@ -64,6 +65,9 @@
 #pragma mark UITableViewDelegate methods
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    UIStoryboard *productDetailsStoryboard = [UIStoryboard storyboardWithName:@"ProductDetailsStoryboard_iPhone" bundle:nil];
+    ProductDetailsViewController *vc = [productDetailsStoryboard instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark UIViewController methods
