@@ -61,6 +61,10 @@
     ;
 }
 
+#pragma mark UITableViewDelegate methods
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
 #pragma mark UIViewController methods
 
