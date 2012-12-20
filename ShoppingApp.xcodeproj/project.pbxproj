@@ -35,7 +35,6 @@
 		284EE68716766F45002E11B8 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE67C16766F45002E11B8 /* AFURLConnectionOperation.m */; };
 		284EE68816766F45002E11B8 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE67E16766F45002E11B8 /* AFXMLRequestOperation.m */; };
 		284EE68916766F45002E11B8 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE68016766F45002E11B8 /* UIImageView+AFNetworking.m */; };
-		284EE68F1676BA85002E11B8 /* ProductDetailsStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284EE68E1676BA85002E11B8 /* ProductDetailsStoryboard_iPhone.storyboard */; };
 		284EE6931676BAA4002E11B8 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284EE6921676BAA4002E11B8 /* ProductDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +91,6 @@
 		284EE67E16766F45002E11B8 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		284EE67F16766F45002E11B8 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		284EE68016766F45002E11B8 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		284EE68E1676BA85002E11B8 /* ProductDetailsStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetailsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		284EE6911676BAA4002E11B8 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
 		284EE6921676BAA4002E11B8 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,7 +171,6 @@
 			children = (
 				284EE6481676302B002E11B8 /* MainStoryboard_iPhone.storyboard */,
 				284EE64A1676303D002E11B8 /* MainStoryboard_iPad.storyboard */,
-				284EE68E1676BA85002E11B8 /* ProductDetailsStoryboard_iPhone.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -334,7 +331,6 @@
 				284EE64116762FCA002E11B8 /* Default-568h@2x.png in Resources */,
 				284EE6491676302B002E11B8 /* MainStoryboard_iPhone.storyboard in Resources */,
 				284EE64B1676303D002E11B8 /* MainStoryboard_iPad.storyboard in Resources */,
-				284EE68F1676BA85002E11B8 /* ProductDetailsStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +472,7 @@
 				284EE64616762FCA002E11B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
