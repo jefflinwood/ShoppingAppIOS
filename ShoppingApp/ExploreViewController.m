@@ -65,8 +65,7 @@
 #pragma mark UITableViewDelegate methods
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    UIStoryboard *productDetailsStoryboard = [UIStoryboard storyboardWithName:@"ProductDetailsStoryboard_iPhone" bundle:nil];
-    ProductDetailsViewController *vc = [productDetailsStoryboard instantiateInitialViewController];
+    ProductDetailsViewController *vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"ProductDetails"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

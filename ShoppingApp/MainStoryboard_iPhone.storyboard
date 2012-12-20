@@ -80,7 +80,7 @@
         <!--Product Details View Controller-->
         <scene sceneID="tDy-yM-exr">
             <objects>
-                <viewController id="joB-IL-tDv" customClass="ProductDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetails" id="joB-IL-tDv" customClass="ProductDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Cu-D4-hB7">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
