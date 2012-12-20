@@ -10,9 +10,15 @@
 
 @class ProductDisplay;
 
+
 @interface ProductDetailsViewController : UIViewController
+
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
+@property (strong, nonatomic) IBOutlet UIButton *addToCartButton;
+@property (strong, nonatomic) IBOutlet UIWebView *descriptionWebView;
+
+- (IBAction)addToCart:(id)sender;
 
 - (void) setProductDisplay:(ProductDisplay*)productDisplay;
 

@@ -46,6 +46,10 @@
 - (void)viewDidUnload {
     [self setTitleLabel:nil];
     [self setProductImageView:nil];
+    [self setAddToCartButton:nil];
+    [self setDescriptionWebView:nil];
     [super viewDidUnload];
+}
+- (IBAction)addToCart:(id)sender {
 }
 @end
