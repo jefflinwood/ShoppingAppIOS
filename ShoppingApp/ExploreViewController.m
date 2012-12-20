@@ -66,6 +66,8 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     ProductDetailsViewController *vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"ProductDetails"];
+    ProductDisplay *productDisplay = [[AppData sharedInstance] exploreProductDisplays][indexPath.row];
+    [vc setProductDisplay:productDisplay];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -8,17 +8,33 @@
 
 #import "ProductDetailsViewController.h"
 
-@interface ProductDetailsViewController ()
+#import "AppData.h"
+#import "AppHelper.h"
+#import "Image.h"
+#import "Product.h"
+#import "ProductDisplay.h"
+#import "UIImageView+AFNetworking.h"
 
+@interface ProductDetailsViewController ()
+@property (nonatomic, strong) ProductDisplay *productDisplay;
 @end
 
 @implementation ProductDetailsViewController
 
-
+#pragma mark UIViewController methods
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.titleLabel.text = self.productDisplay.title;
+    //get the first product for a product display
+    Product *product = [[AppData sharedInstance] firstProduct:self.productDisplay];
+    if (product.images != nil && [product.images count] > 0) {
+        Image *image = product.images[0];
+        NSString *imageUri = [AppHelper uriForDrupalUri:image.drupalUri];
+        [self.productImageView setImageWithURL:[NSURL URLWithString:imageUri]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
