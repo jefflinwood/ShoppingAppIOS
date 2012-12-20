@@ -27,4 +27,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setTitleLabel:nil];
+    [self setProductImageView:nil];
+    [super viewDidUnload];
+}
 @end
