@@ -53,7 +53,7 @@ static AppData *sharedData = nil;
 }
 
 - (void) loadProductDisplays {
-    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product-display.json?limit=100"];
+    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product-display.json?flatten_fields=false&limit=100"];
     NSURL *url = [NSURL URLWithString:uri];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -85,7 +85,7 @@ static AppData *sharedData = nil;
 }
 
 - (void) loadProducts {
-    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product.json?limit=100"];
+    NSString *uri = [NSString stringWithFormat:@"%@%@",[self baseURI], @"/product.json?flatten_fields=false&limit=100"];
     NSURL *url = [NSURL URLWithString:uri];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
