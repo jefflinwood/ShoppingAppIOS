@@ -116,12 +116,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a2V-bJ-5sx" userLabel="Price Label">
+                                <rect key="frame" x="20" y="268" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="addToCartButton" destination="lmY-SS-McW" id="IVl-bL-c5G"/>
                         <outlet property="descriptionWebView" destination="fVz-ty-r4n" id="Ghe-5I-SIH"/>
+                        <outlet property="priceLabel" destination="a2V-bJ-5sx" id="BUl-Gq-Eqi"/>
                         <outlet property="productImageView" destination="wDc-nR-OnK" id="GX6-e7-ycK"/>
                         <outlet property="titleLabel" destination="FJ1-GS-bck" id="joX-ZO-M2t"/>
                     </connections>
@@ -200,6 +208,8 @@
             <relationships>
                 <relationship kind="action" name="addToCart:"/>
                 <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="descriptionWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>

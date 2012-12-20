@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (strong, nonatomic) IBOutlet UIButton *addToCartButton;
 @property (strong, nonatomic) IBOutlet UIWebView *descriptionWebView;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 
 - (IBAction)addToCart:(id)sender;
 

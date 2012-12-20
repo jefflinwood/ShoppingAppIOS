@@ -48,6 +48,7 @@
     [self setProductImageView:nil];
     [self setAddToCartButton:nil];
     [self setDescriptionWebView:nil];
+    [self setPriceLabel:nil];
     [super viewDidUnload];
 }
 - (IBAction)addToCart:(id)sender {
